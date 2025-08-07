@@ -7,8 +7,8 @@ class Food(Turtle):
         self.penup()
         self.shapesize(stretch_len=0.5, stretch_wid=0.5)
         self.color('#91b859')
-        random_x = random.randint(-280, 280)
-        random_y = random.randint(-280, 280)
+        random_x = random.randint(-275, 275)
+        random_y = random.randint(-275, 275)
         self.goto(random_x, random_y)
         self.refresh()
     def refresh(self):
