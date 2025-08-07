@@ -3,6 +3,7 @@ import time
 from snake import Snake
 from food import Food
 from Score_Board import ScoreBoard
+
 # Configuring screen
 screen = Screen()
 screen.setup(height=600, width=600)
@@ -36,10 +37,9 @@ while game_is_on:
         game_is_on = False
         scoreboard.game_over()
     # Detect food collision with tail
-    for segment in snake.segments:
-        if segment != snake.head:
-            if snake.head.distance(segment) < 10:
-                game_is_on = False
-                scoreboard.game_over()
+    for segment in snake.segments[1:]:
+        if snake.head.distance(segment) < 10:
+            game_is_on = False
+            scoreboard.game_over()
 
 screen.exitonclick()
